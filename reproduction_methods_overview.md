@@ -66,14 +66,14 @@ data/reproduction/sample_authchain.real.json
 一键运行：
 
 ```bash
-cd /home/public/minzhi/AuthChain
+cd /xxx/AuthChain
 ./run_reproduction.sh
 ```
 
 分步运行：
 
 ```bash
-cd /home/public/minzhi/AuthChain
+cd /xxx/AuthChain
 
 python3 extract_information.py \
   --input data/reproduction/sample_questions.json \
