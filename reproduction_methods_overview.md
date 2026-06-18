@@ -1,6 +1,6 @@
 # 已复现方法统一清单
 
-本文档汇总当前 `/home/public/minzhi` 下已经完成复现的各方法，按统一格式说明：
+本文档汇总当前已经完成复现的各方法，按统一格式说明：
 
 - 工具
 - 前置条件
@@ -8,14 +8,12 @@
 - 输出
 - 操作步骤
 
-当前盘点到 7 个已有复现文档。其中前 5 个是主要复现方法；后 2 个是后续补充复现的方法。
 
 ## 1. AuthChain
 
 ### 工具
 
 - 方法/仓库：`AuthChain`
-- 目录：`/home/public/minzhi/AuthChain`
 - 主要脚本：
   - `extract_information.py`
   - `AuthChain.py`
@@ -29,7 +27,7 @@
 - 安装依赖：
 
 ```bash
-cd /home/public/minzhi/AuthChain
+cd /xxx/AuthChain
 pip install -r requirements.txt
 ```
 
@@ -101,7 +99,6 @@ python3 AuthChain.py \
 
 - 方法/仓库：`IJBR`
 - 方法名：`Puzzler`
-- 目录：`/home/public/minzhi/IJBR`
 - 主要脚本：
   - `OMG.py`
   - `jailbreak.py`
@@ -113,7 +110,7 @@ python3 AuthChain.py \
 ### 前置条件
 
 ```bash
-cd /home/public/minzhi/IJBR
+cd /xxx/IJBR
 pip install -r requirements.txt
 export ANTCHAT_API_KEY="YOUR_REAL_KEY"
 ```
@@ -138,14 +135,14 @@ data/reproduction/jailbreak.real.json
 一键运行：
 
 ```bash
-cd /home/public/minzhi/IJBR
+cd /xxx/IJBR
 ./run_reproduction.sh
 ```
 
 分步运行：
 
 ```bash
-cd /home/public/minzhi/IJBR
+cd /xxx/IJBR
 
 python3 OMG.py \
   --input data/harmful_behaviors_custom.xlsx \
@@ -169,7 +166,7 @@ python3 jailbreak.py \
 
 - 方法/仓库：`VEtesting`
 - 方法名：`VEglue`
-- 目录：`/home/public/minzhi/VEtesting`
+- 目录：`/xxx/VEtesting`
 - 主要脚本：
   - `extractentity_VE.py`
   - `VG.py`
@@ -182,7 +179,7 @@ python3 jailbreak.py \
 ### 前置条件
 
 ```bash
-cd /home/public/minzhi/VEtesting
+cd /xxx/VEtesting
 pip install -r requirements.txt
 export ANTCHAT_API_KEY="YOUR_REAL_KEY"
 ```
@@ -215,14 +212,14 @@ data/reproduction/images/
 一键运行：
 
 ```bash
-cd /home/public/minzhi/VEtesting
+cd /xxx/VEtesting
 ./run_reproduction.sh
 ```
 
 分步运行：
 
 ```bash
-cd /home/public/minzhi/VEtesting
+cd /xxx/VEtesting
 
 python3 extractentity_VE.py \
   --input data/snli_ve_test.xlsx \
@@ -250,7 +247,7 @@ python3 MR.py \
 ### 工具
 
 - 方法/仓库：`InstruCoT-LLM`
-- 目录：`/home/public/minzhi/InstruCoT-LLM`
+- 目录：`/xxx/InstruCoT-LLM`
 - 主要脚本：
   - `PI_generation.py`
   - `CoT_generation.py`
@@ -264,7 +261,7 @@ python3 MR.py \
 ### 前置条件
 
 ```bash
-cd /home/public/minzhi/InstruCoT-LLM
+cd /xxx/InstruCoT-LLM
 /home/public/.local/bin/python3.10 -m venv .venv
 .venv/bin/pip install -r requirements.txt
 export ANTCHAT_API_KEY="YOUR_REAL_KEY"
@@ -274,7 +271,7 @@ export HF_HUB_DISABLE_XET=1
 推荐提前下载 Qwen3.5：
 
 ```bash
-cd /home/public/minzhi/InstruCoT-LLM
+cd /xxx/InstruCoT-LLM
 export HF_HUB_DISABLE_XET=1
 .venv/bin/python -c "from huggingface_hub import snapshot_download; print(snapshot_download('Qwen/Qwen3.5-0.8B'))"
 ```
@@ -303,7 +300,7 @@ outputs/inference_test_outputs.json
 一键运行：
 
 ```bash
-cd /home/public/minzhi/InstruCoT-LLM
+cd /xxx/InstruCoT-LLM
 chmod +x run_reproduction.sh
 ./run_reproduction.sh
 ```
@@ -311,7 +308,7 @@ chmod +x run_reproduction.sh
 分步运行：
 
 ```bash
-cd /home/public/minzhi/InstruCoT-LLM
+cd /xxx/InstruCoT-LLM
 
 .venv/bin/python PI_generation.py \
   --input data/base_system_prompts.json \
@@ -354,7 +351,6 @@ cd /home/public/minzhi/InstruCoT-LLM
 
 - 方法/仓库：`patcher`
 - 方法名：`Patcher`
-- 目录：`/home/public/minzhi/patcher`
 - 主要脚本：
   - `reproduce_patcher.py`
   - `model_client.py`
@@ -366,7 +362,7 @@ cd /home/public/minzhi/InstruCoT-LLM
 ### 前置条件
 
 ```bash
-cd /home/public/minzhi/patcher
+cd /xxx/patcher
 /home/public/.local/bin/python3.10 -m venv .venv
 .venv/bin/pip install -U pip setuptools wheel
 .venv/bin/pip install --extra-index-url https://download.pytorch.org/whl/cu121 torch==2.5.1+cu121 torchvision==0.20.1+cu121
@@ -413,7 +409,7 @@ outputs/reproduction_real/result.json
 ### 操作步骤
 
 ```bash
-cd /home/public/minzhi/patcher
+cd /xxx/patcher
 CUDA_VISIBLE_DEVICES=0 \
 NO_PROXY=antchat.alipay.com,antchat-gray.alipay.com \
 HF_HOME=/home/public/minzhi/patcher/.hf_cache \
